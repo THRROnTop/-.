@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>موقع الثريا THRR</title>
+<style>
+  body {
+    font-family: "Tajawal", sans-serif;
+    background-color: #e0e0e0;
+    color: #333;
+    text-align: center;
+    margin-top: 80px;
+  }
+  h1 {
+    color: #1a237e;
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+  input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 250px;
+    border-radius: 8px;
+    border: 1px solid #bbb;
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  input:focus {
+    border-color: #2196f3;
+    outline: none;
+  }
+  button {
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  button:hover {
+    background-color: #1976d2;
+  }
+  #result-box {
+    margin-top: 30px;
+    display: none;
+  }
+  #result {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 8px;
+    font-size: 17px;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    white-space: pre-line;
+  }
+  .divider {
+    width: 80%;
+    height: 2px;
+    background-color: #000;
+    margin: 15px auto;
+  }
+</style>
+</head>
+<body>
+  <h1>موقع خاص لدى الثريا THRR لدى قطاع حرس الحدود</h1>
+
+  <input type="text" id="directive" placeholder="التوجيه">
+  <input type="text" id="militaryCode" placeholder="الكود العسكري">
+  <button onclick="showResult()">تأكيد</button>
+
+  <div id="result-box">
+    <div id="result"></div>
+  </div>
+
+<script>
+function showResult() {
+  var directive = document.getElementById('directive').value.trim();
+  var code = document.getElementById('militaryCode').value.trim();
+
+  if (directive === '' || code === '') {
+    alert('الرجاء تعبئة جميع الحقول');
+    return;
+  }
+
+  var output = code + " I " + directive;
+
+  document.getElementById('result').textContent = output;
+  document.getElementById('result-box').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
